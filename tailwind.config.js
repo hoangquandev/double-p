@@ -7,11 +7,19 @@ module.exports = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      fontFamily: {
+        primary: ["var(--font-bioRhyme_Expanded)"],
+        secondary: ["var(--font-bioRhyme)"],
       },
+      keyframes: {
+        infinityText: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-100%)' },
+        }
+      },
+      animation: {
+        infinityText: 'infinityText 20s linear infinite',
+      }
     },
   },
   plugins: [],

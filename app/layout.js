@@ -1,7 +1,18 @@
+import Container from './components/layout/Container'
+import NavBar from './components/navbar/NavBar'
 import './globals.css'
-import { Inter } from 'next/font/google'
-
-const inter = Inter({ subsets: ['latin'] })
+import { BioRhyme, BioRhyme_Expanded } from 'next/font/google'
+//BioRhyme Expanded
+const bioRhyme = BioRhyme({
+  subsets: ['latin'],
+  variable: "--font-bioRhyme",
+  weight: ["200", "300", "400", "700", "800"]
+})
+const bioRhyme_Expanded = BioRhyme_Expanded({
+  subsets: ['latin'],
+  variable: "--font-bioRhyme_Expanded",
+  weight: ["200", "300", "400", "700", "800"]
+})
 
 export const metadata = {
   title: 'Create Next App',
@@ -11,7 +22,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${bioRhyme.variable} ${bioRhyme_Expanded.variable} px-3 lg:px-0`}>
+        <Container>
+          <NavBar />
+          {children}
+        </Container>
+      </body>
     </html>
   )
 }
