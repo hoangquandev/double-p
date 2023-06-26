@@ -14,7 +14,7 @@ const Poster = ({ w, h, title, desc }) => {
             onMouseOver={handleMouseOver}
             onMouseOut={handleMouseOut}
             style={hover ? { backgroundColor: "black", color: "#F00" } : null}
-            className={`relative w-[${w}]] h-[${h}] rounded-[20px] bg-gray-200 duration-500 ease-linear flex items-end p-[30px] my-[20px]`}>
+            className={`relative w-[${w}] h-[${h}] rounded-[20px] bg-gray-200 duration-500 ease-linear flex items-end p-[30px] my-[20px]`}>
             <div className={`absolute top-0 left-0  rounded-[20px] w-[${w}] h-[${h}]`}>
                 {/* <Image
                     src="/yen-xao-banner.png"
