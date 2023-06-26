@@ -38,7 +38,7 @@ const CardHome = ({ index, indexHover, bgImage, text, mouseOverHandle }) => {
                 // fill
                 />
             </div>
-            <div className="absolute top-[30px] left-[30px] text-white dark:text-black text-3xl md:text-4xl font-bold">{arrText.map((item, index) => {
+            <div className="absolute top-[30px] left-[30px] text-white dark:text-black text-base font-bold">{arrText.map((item, index) => {
                 return (
                     <h2 key={index}>{item}</h2>
                 )
