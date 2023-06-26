@@ -4,12 +4,8 @@ import CardHome from "../card/CardHome"
 
 const service = [
     {
-        bgImage: "/home-design.png",
+        bgImage: "/home-design.gif",
         text: "VISUAL YOUR MIND",
-        width: "402",
-        height: "365",
-        right: "0",
-        bottom: "0",
         name: "CAO SON",
         desc: "Tốt nghiệp trường đại học Kiến trúc Thành Phố Hồ Chí Minh và hiện đang tìm kiếm sự phát triển trong lĩnh vực thiết kế.Với các kỹ năng dàn trải và linh hoạt trong từng trường hợp cụ thể. ",
         role: [
@@ -23,12 +19,8 @@ const service = [
         ]
     },
     {
-        bgImage: "/home-dev.png",
+        bgImage: "/home-dev.gif",
         text: "DEVELOPE YOUR SITE",
-        width: "532",
-        height: "414",
-        right: "-28px",
-        bottom: "-49px",
         name: "CAO SON",
         desc: "Tốt nghiệp trường đại học Kiến trúc Thành Phố Hồ Chí Minh và hiện đang tìm kiếm sự phát triển trong lĩnh vực thiết kế.Với các kỹ năng dàn trải và linh hoạt trong từng trường hợp cụ thể. ",
         role: [

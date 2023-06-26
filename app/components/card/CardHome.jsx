@@ -3,7 +3,7 @@ import Image from "next/image"
 import { useEffect, useState } from "react"
 
 
-const CardHome = ({ index, indexHover, bgImage, text, width, height, right, bottom, mouseOverHandle }) => {
+const CardHome = ({ index, indexHover, bgImage, text, mouseOverHandle }) => {
     const arrText = text.split(" ")
     const [isHover, setHover] = useState(false)
     const handleMouseOver = (e) => {
@@ -26,11 +26,14 @@ const CardHome = ({ index, indexHover, bgImage, text, width, height, right, bott
             onMouseOver={handleMouseOver}
             style={isHover ? { flexGrow: 5 } : { flexGrow: 1 }}
             className={`relative w-full lg:w-auto ease-linear duration-500 h-full bg-black p- rounded-3xl  overflow-hidden`}>
-            <div className="absolute " style={{ right: right, bottom: bottom }}>
+            <div className="absolute bottom-0 right-0">
                 <Image
                     src={bgImage}
-                    width={width}
-                    height={height}
+                    placeholder="blur"
+                    quality={70}
+                    blurDataURL={bgImage}
+                    width={400}
+                    height={370}
                     alt="background image"
                     priority
                 // fill

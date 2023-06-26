@@ -3,10 +3,10 @@
 const NavBar = () => {
     return (
         <nav className="font-primary font-normal text-sm flex justify-between px-7 py-10">
-            <div className="text-xl font-extrabold text-left">
+            <div className="text-xl font-extrabold text-left text-[#F00]">
                 <h2>
-                    VARIAN <br />
-                    VISUAL
+                    CC <br />
+                    STUDIO
                 </h2>
             </div>
             <div className="hidden md:block text-center">
