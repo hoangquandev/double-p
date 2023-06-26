@@ -1,6 +1,7 @@
 'use client'
 import { useEffect, useState } from "react"
 import CardHome from "../card/CardHome"
+import Image from "next/image"
 
 const service = [
     {
@@ -74,20 +75,58 @@ const Double = () => {
                     />
                 )
             })}
-            <div onMouseOut={mouseOutHandle} style={isHoverService ? { opacity: 1, zIndex: 10 } : { opacity: 0, zIndex: -10 }} className="hidden bg-white lg:block absolute top-0 left-0  h-[400px] lg:w-[1240px] ease-linear duration-1000">
+            <div onMouseOut={mouseOutHandle} style={isHoverService ? { opacity: 1, zIndex: 10 } : { opacity: 0, zIndex: -10 }} className="hidden bg-white dark:bg-black lg:block absolute top-0 left-0  h-[400px] lg:w-[1240px] ease-linear duration-1000 rounded-3xl">
                 <div className="relative w-full xl:w-[1240px] flex-col lg:flex-row flex justify-between items-center gap-5 h-[400px]">
-                    <div style={indexHover === 0 ? { flexGrow: 5 } : { flexGrow: 1 }} className="relative w-full lg:w-auto ease-linear duration-500 h-full bg-white p- rounded-3xl  overflow-hidden">
+                    <div style={indexHover === 0 ? { flexGrow: 5 } : { flexGrow: 1 }} className="relative w-full lg:w-4/5 ease-linear duration-500 h-full bg-white dark:bg-black rounded-3xl  overflow-hidden ">
                         {indexHover === 0 ?
-                            <div>text</div>
-                            : <div>
-                                role
+                            <div className=" flex gap-[20px] justify-between p-[30px]">
+                                <div className="[&>*]:w-full w-2/3 ">
+                                    <h2 className="text-xl font-bold">{service[indexHover]?.name}</h2>
+                                    <p className="text-base font-light mt-[10px] font-third italic">{service[indexHover]?.desc}</p>
+                                </div>
+                                <div className="relative w-[400px] h-[400px]">
+                                    {service[indexHover]?.bgImage && <Image
+                                        src={service[indexHover]?.bgImage}
+                                        alt='hehe'
+                                        fill
+                                    />}
+                                </div>
+                            </div>
+                            : <div className="text-left font-bold text-base p-[30px]">
+                                <ul>
+                                    <li className="text-base font-light font-third italic">role</li>
+                                    {service[indexHover]?.role.map((item, index) => {
+                                        return (
+                                            <li key={index}>{item}</li>
+                                        )
+                                    })}
+                                </ul>
                             </div>}
                     </div>
-                    <div style={indexHover === 1 ? { flexGrow: 5 } : { flexGrow: 1 }} className="relative w-full lg:w-auto ease-linear duration-500 h-full bg-white p- rounded-3xl  overflow-hidden">
+                    <div style={indexHover === 1 ? { flexGrow: 5 } : { flexGrow: 1 }} className="relative lg:w-auto ease-linear duration-500 h-full bg-white dark:bg-black rounded-3xl  overflow-hidden w-1/5">
                         {indexHover === 0 ?
-                            <div>role</div>
-                            : <div>
-                                text
+                            <div className="text-right font-bold text-base p-[30px]">
+                                <ul>
+                                    <li className="text-base font-light font-third italic">role</li>
+                                    {service[indexHover]?.role.map((item, index) => {
+                                        return (
+                                            <li key={index}>{item}</li>
+                                        )
+                                    })}
+                                </ul>
+                            </div>
+                            : <div className=" flex gap-[20px] justify-between p-[30px]">
+                                <div className="[&>*]:w-full w-2/3 ">
+                                    <h2 className="text-xl font-bold">{service[indexHover]?.name}</h2>
+                                    <p className="text-base font-light mt-[10px] font-third italic">{service[indexHover]?.desc}</p>
+                                </div>
+                                <div className="relative w-[400px] h-[400px]">
+                                    {service[indexHover]?.bgImage && <Image
+                                        src={service[indexHover]?.bgImage}
+                                        alt='hehe'
+                                        fill
+                                    />}
+                                </div>
                             </div>}
                     </div>
                 </div>

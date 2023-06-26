@@ -1,3 +1,4 @@
+import ThemeSwitch from "@/app/helper/ThemeSwitch"
 
 
 const NavBar = () => {
@@ -10,7 +11,8 @@ const NavBar = () => {
                 </h2>
             </div>
             <div className="hidden md:block text-center">
-                <p>DAY</p>
+                {/* <p></p> */}
+                <ThemeSwitch />
             </div>
             <div>
                 <ul className="text-right">

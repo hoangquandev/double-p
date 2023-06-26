@@ -5,11 +5,13 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  darkMode: "class",
   theme: {
     extend: {
       fontFamily: {
         primary: ["var(--font-bioRhyme_Expanded)"],
         secondary: ["var(--font-bioRhyme)"],
+        third: ["var(--font-fahkwang)"],
       },
       keyframes: {
         infinityText: {
