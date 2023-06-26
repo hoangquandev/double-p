@@ -26,14 +26,13 @@ const CardHome = ({ index, indexHover, bgImage, text, mouseOverHandle }) => {
             onMouseOver={handleMouseOver}
             style={isHover ? { flexGrow: 5 } : { flexGrow: 1 }}
             className={`relative w-full lg:w-auto ease-linear duration-500 h-full bg-black p- rounded-3xl  overflow-hidden`}>
-            <div className="absolute bottom-0 right-0">
+            <div className="absolute bottom-0 right-0 w-[200px] h-[185px] lg:w-[400px] lg:h-[370px]">
                 <Image
                     src={bgImage}
                     placeholder="blur"
-                    quality={70}
+                    quality={10}
                     blurDataURL={bgImage}
-                    width={400}
-                    height={370}
+                    fill
                     alt="background image"
                     priority
                 // fill
