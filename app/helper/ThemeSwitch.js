@@ -8,8 +8,16 @@ const ThemeSwitch = () => {
     const [today, setDate] = useState(new Date())
     const { systemTheme, theme, setTheme } = useTheme();
     const currentTheme = theme === 'system' ? systemTheme : theme;
+    const hour = today.getHours();
+    // const hour = 14
     // let time = new Date();
     useEffect(() => {
+        console.log(hour);
+        if (hour > 5 && hour < 17) {
+            setTheme('light')
+        } else {
+            setTheme('dark')
+        }
         const timer = setInterval(() => { // Creates an interval which will update the current data every minute
             // This will trigger a rerender every component that uses the useDate hook.
             setDate(new Date());
