@@ -1,4 +1,6 @@
+
 import ThemeSwitch from "@/app/helper/ThemeSwitch"
+import Link from "next/link"
 
 
 const NavBar = () => {
@@ -11,13 +13,20 @@ const NavBar = () => {
                 </h2>
             </div>
             <div className="hidden md:block text-center">
-                {/* <p></p> */}
                 <ThemeSwitch />
             </div>
             <div>
                 <ul className="text-right">
-                    <li>WORK</li>
-                    <li className="pt-2">CONTACT</li>
+                    <li>
+                        <Link href="/#work" scroll={false}>
+                            WORK
+                        </Link>
+                    </li>
+                    <li className="mt-2">
+                        <Link href="/#contact" scroll={false}>
+                            CONTACT
+                        </Link>
+                    </li>
                 </ul>
             </div>
         </nav>

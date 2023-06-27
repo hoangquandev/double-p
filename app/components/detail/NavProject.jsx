@@ -2,7 +2,7 @@
 import { useTheme } from 'next-themes';
 
 const NavProject = () => {
-    const { systemTheme, theme, setTheme } = useTheme();
+    const { theme } = useTheme();
     return (
         <div className='flex justify-between'>
             <div>

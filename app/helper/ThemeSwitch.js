@@ -31,7 +31,7 @@ const ThemeSwitch = () => {
     // const hour = today.getHours();
     // const wish = `Good ${(hour < 12 && 'Morning') || (hour < 17 && 'Afternoon') || 'Evening'}, `;
 
-    const time = today.toLocaleTimeString(locale, { hour: 'numeric', hour12: true, second: "numeric", minute: 'numeric' });
+    const time = today.toLocaleTimeString(locale, { hour: 'numeric', hour12: true, minute: 'numeric' });
     return (
         <p
             onClick={() => theme == "dark" ? setTheme('light') : setTheme("dark")}
