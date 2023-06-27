@@ -12,7 +12,6 @@ const ThemeSwitch = () => {
     // const hour = 14
     // let time = new Date();
     useEffect(() => {
-        console.log(hour);
         if (hour > 5 && hour < 17) {
             setTheme('light')
         } else {
