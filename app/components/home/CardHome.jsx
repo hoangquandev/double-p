@@ -24,8 +24,8 @@ const CardHome = ({ index, indexHover, bgImage, text, mouseOverHandle }) => {
 
         <div
             onMouseOver={handleMouseOver}
-            style={isHover ? { flexGrow: 5 } : { flexGrow: 1 }}
-            className={`relative w-full lg:w-auto ease-linear duration-500 h-full bg-black dark:bg-white rounded-3xl  overflow-hidden`}>
+            style={isHover ? { flex: 4 } : { flex: 1 }}
+            className={`relative w-full  ease-in duration-800 h-full bg-black dark:bg-white rounded-3xl  overflow-hidden`}>
             <div className="absolute bottom-0 right-0 w-[200px] h-[185px] lg:w-[400px] lg:h-[370px]">
                 <Image
                     src={bgImage}

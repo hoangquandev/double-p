@@ -1,11 +1,11 @@
 
 import Container from './components/layout/Container'
-import NavBar from './components/navbar/NavBar'
+import NavBar from './components/layout/NavBar'
 import './globals.css'
 import { BioRhyme, BioRhyme_Expanded } from 'next/font/google'
 import { Fahkwang } from 'next/font/google'
 import Provider from './helper/provider'
-import Footer from './components/navbar/Footer'
+import Footer from './components/layout/Footer'
 //BioRhyme Expanded
 const fahkwang = Fahkwang({
   subsets: ['latin'],
@@ -100,7 +100,9 @@ export default function RootLayout({ children }) {
         <Provider>
           <Container>
             <NavBar />
-            {children}
+            <Container>
+              {children}
+            </Container>
             <Footer />
           </Container>
         </Provider>
