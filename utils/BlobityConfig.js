@@ -1,11 +1,11 @@
 export const initialBlobityOptions = {
-    licenseKey: "opensource",
+    // licenseKey: "opensource",
     focusableElementsOffsetX: 5,
     focusableElementsOffsetY: 5,
-    color: "#fe5600",
+    color: "#609F15",
     dotColor: "#000",
     dotSize: 8,
-    invert: true,
+    // invert: true,
     focusableElements:
         "[data-blobity], a:not([data-no-blobity]), h4:not([data-no-blobity]), li:not([data-no-blobity]), button:not([data-no-blobity]), [data-blobity-tooltip]",
     font: "'Montserrat','Source Sans Pro',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif",
@@ -13,7 +13,7 @@ export const initialBlobityOptions = {
     fontWeight: 500,
     opacity: 1,
     fontColor: "#F00",
-    zIndex: 10,
+    // zIndex: 10,
     size: 40,
     radius: 4,
     magnetic: true,

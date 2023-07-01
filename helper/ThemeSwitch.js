@@ -33,11 +33,11 @@ const ThemeSwitch = () => {
 
     const time = today.toLocaleTimeString(locale, { hour: 'numeric', hour12: true, minute: 'numeric' });
     return (
-        <p
+        <button
             onClick={() => theme == "dark" ? setTheme('light') : setTheme("dark")}
-            className="cursor-pointer">
+        >
             {time}
-        </p>
+        </button>
     )
 }
 

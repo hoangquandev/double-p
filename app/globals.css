@@ -12,3 +12,7 @@ html {
     --scroll-behavior: smooth !important;
     scroll-behavior: smooth !important;
 }
+
+.background {
+    @apply bg-[#ffffff4d] backdrop-blur-lg rounded-[20px];
+}
