@@ -31,7 +31,7 @@ const Work = () => {
                     </h2>
                 </div>
                 <div>
-                    <button className='background rounded-[25px] px-[50px] py-[17px] font-third text-lg font-normal'>See More Work</button>
+                    <button className='background rounded-[30px] px-[50px] py-[14px] font-third text-lg font-normal'>See More Work</button>
                 </div>
             </div>
         </div>
