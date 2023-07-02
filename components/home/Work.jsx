@@ -6,10 +6,10 @@ const Work = () => {
             <div >
                 <h2 className='font-primary text-[25px] leading-[35px] font-extrabold uppercase'>stay
                     create</h2>
-                <h3 className='font-secondary text-[18px] leading-[25px] font-bold uppercase my-[30px]'>photography
+                <h3 className='font-secondary text-[18px] leading-[25px] font-bold uppercase my-[30px] w-[161px]'>photography
                     3D - 2d design
                     motion</h3>
-                <p className='font-third text-lg font-light w-[283px]'>The Gallery Archives is the primary source for the history of the Design Passion of Mine. The archives collects, preserves, and makes available documentation relating to the museum’s past and development, including its exhibitions, acquisitions, scholarly and educational programs, and buildings.</p>
+                <p className='font-third text-lg font-light w-1/6'>The Gallery Archives is the primary source for the history of the Design Passion of Mine. The archives collects, preserves, and makes available documentation relating to the museum’s past and development, including its exhibitions, acquisitions, scholarly and educational programs, and buildings.</p>
             </div>
             <div className='col-start-2 col-end-5 flex flex-col gap-[20px] '>
                 <div className='background h-[400px]'>
