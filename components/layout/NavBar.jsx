@@ -7,14 +7,14 @@ import { usePathname } from 'next/navigation'
 const NavBar = () => {
     // const { pathname } = usePathname()
     const pathname = usePathname()
-    console.log(pathname);
+    // console.log(pathname);
     return (
         <nav className="font-primary font-normal text-sm flex justify-between px-7 py-10">
             <div className="text-xl font-extrabold text-left text-[#F00]">
                 <button>
                     <h2>
-                        CC <br />
-                        STUDIO
+                        CAO <br />
+                        SON
                     </h2>
                 </button>
             </div>

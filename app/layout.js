@@ -100,7 +100,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${bioRhyme.variable} ${bioRhyme_Expanded.variable} ${fahkwang.variable} scroll-smooth scrollbar-thin scrollbar-track-[#0E1016] scrollbar-thumb-[#212531] bg-white dark:bg-black px-3 lg:px-0`}>
         <Provider>
-          <CustomCursor />
+          {/* <CustomCursor /> */}
           <Container>
             <NavBar />
             <Container>
