@@ -24,7 +24,7 @@ const NavBar = () => {
             <div>
                 <ul className="text-right">
                     <li >
-                        <Link href="/#work" scroll={false} >
+                        <Link href="/work" scroll={false} >
                             <button>WORK</button>
                         </Link>
                     </li>

@@ -91,19 +91,19 @@ const WorkGrid = () => {
                     </div>
                 </div>
                 <div className='col-span-2 col-start-2'>
-                    <table className='w-full'>
-                        <tr className='w-full text-left [&>*]:pb-[60px] text-lg font-secondary font-bold'>
-                            <th className='w-1/4 pl-[20px]'>PROJECT</th>
-                            <th className='w-1/3 pl-[30px]'>ROLE</th>
-                            <th className='text-right'>TIME</th>
-                        </tr>
+                    <div className='w-full'>
+                        <div className='relative flex w-full text-left [&>*]:pb-[60px] text-lg font-secondary font-bold'>
+                            <div className='w-1/3 min-[1920px]:w-1/4 pl-[20px]'>PROJECT</div>
+                            <div className='w-1/4 min-[1920px]:w-1/4 pl-[30px]'>ROLE</div>
+                            <div className='w-5/12  text-right'>TIME</div>
+                        </div>
                         {project.map((item, index) => {
                             return (
                                 <DetailSection key={index} project={item.project} role={item.role} time={item.time} />
                             )
                         })}
 
-                    </table>
+                    </div>
                 </div>
             </div>
         </div>

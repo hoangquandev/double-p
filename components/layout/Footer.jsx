@@ -53,12 +53,12 @@ const Footer = () => {
                 </div>
                 <div className="relative col-start-2 col-end-4 flex font-third font-light">
                     <h3 className="uppercase text-xl font-primary font-bold w-1/3 min-[1920px]:w-1/4 pl-[20px] my-auto">PHAM BUI <br /> CAO SON</h3>
-                    <p className="my-auto w-2/5 pl-[30px]">
+                    <p className="my-auto w-1/4 pl-[30px]">
                         <a href="mailto:caosonwork@gmail.com">caosonwork@gmail.com</a>
                         <br />
                         <a href="tel:+84 972 091 245">+84 972 091 245</a>
                     </p>
-                    <p className="absolute my-auto text-right right-0 top-[50%] translate-y-[-50%]">FACEBOOK <br /> BEHANCE</p>
+                    <p className="w-5/12 my-auto text-right">FACEBOOK <br /> BEHANCE</p>
                 </div>
             </div>
         </div>
