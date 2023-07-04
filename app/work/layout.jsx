@@ -2,7 +2,7 @@ import Container from "@/components/layout/Container"
 import Footer from "@/components/layout/Footer"
 
 
-const layout = ({ children }) => {
+const layoutWork = ({ children }) => {
     return (
         <div>
             <Container>
@@ -13,4 +13,4 @@ const layout = ({ children }) => {
     )
 }
 
-export default layout
+export default layoutWork
