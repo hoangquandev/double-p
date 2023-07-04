@@ -2,6 +2,7 @@ import React from 'react'
 import IconGrid from './IconGrid'
 import DetailSection from './DetailSection'
 import Link from 'next/link'
+import { convertToSlug } from '@/utils/convert'
 
 const project = [
     {
@@ -98,8 +99,9 @@ const WorkGrid = () => {
                             <div className='w-5/12  text-right'>TIME</div>
                         </div>
                         {project.map((item, index) => {
+                            const slug = convertToSlug(item.project)
                             return (
-                                <DetailSection key={index} project={item.project} role={item.role} time={item.time} />
+                                <DetailSection key={index} slug={slug} project={item.project} role={item.role} time={item.time} />
                             )
                         })}
 

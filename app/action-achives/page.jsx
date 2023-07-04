@@ -1,4 +1,5 @@
 import DetailSection from '@/components/work/DetailSection'
+import { convertToSlug } from '@/utils/convert'
 import React from 'react'
 const projectAchives = [
     {
@@ -115,11 +116,7 @@ const projectAchives = [
 
 const Achives = () => {
 
-    const convertToSlug = (Text) => {
-        return Text.toLowerCase()
-            .replace(/ /g, "-")
-            .replace(/[^\w-]+/g, "");
-    }
+
     return (
         <div>
             <div>
