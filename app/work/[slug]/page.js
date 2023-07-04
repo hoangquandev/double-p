@@ -1,5 +1,5 @@
 import React from 'react'
-import NavProject from '@/components/detail/NavProject'
+// import NavProject from '@/components/detail/NavProject'
 import TwoSquare from '@/components/layout/TwoSquare'
 import Video from '@/components/layout/Video'
 import Video400 from '@/components/layout/Video400'
@@ -9,7 +9,7 @@ import Info from '@/components/detail/Info'
 const Work = ({ params }) => {
     return (
         <div>
-            <NavProject />
+            {/* <NavProject /> */}
             <Video />
             <Info />
             <Triple />

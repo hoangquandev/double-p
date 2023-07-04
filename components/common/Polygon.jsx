@@ -7,7 +7,6 @@ const Polygon = ({ top, right, rot, theme }) => {
     const [r, setRight] = useState('')
     const [rotate, setRot] = useState('')
     const [isDark, setTheme] = useState('')
-    console.log(isDark);
     useEffect(() => {
         setTop(top)
         setRight(right)

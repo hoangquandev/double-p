@@ -72,7 +72,7 @@ const projectAchives = [
         time: "2021"
     },
     {
-        project: "pEARL SENSE SPA",
+        project: "PEARL SENSE SPA",
         role: "Design - Develope - Branding",
         time: "2021"
     },
@@ -114,6 +114,12 @@ const projectAchives = [
 ]
 
 const Achives = () => {
+
+    const convertToSlug = (Text) => {
+        return Text.toLowerCase()
+            .replace(/ /g, "-")
+            .replace(/[^\w-]+/g, "");
+    }
     return (
         <div>
             <div>
@@ -126,8 +132,10 @@ const Achives = () => {
                     <div className='w-5/12 text-right'>TIME</div>
                 </div>
                 {projectAchives.map((item, index) => {
+                    const slug = convertToSlug(item.project)
+                    // console.log(slug);
                     return (
-                        <DetailSection key={index} project={item.project} role={item.role} time={item.time} />
+                        <DetailSection key={index} slug={slug} project={item.project} role={item.role} time={item.time} />
                     )
                 })}
 
