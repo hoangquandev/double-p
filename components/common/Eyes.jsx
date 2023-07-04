@@ -12,7 +12,7 @@ const Eyes = ({ theme, color }) => {
         } else {
             setDisplay('none')
         }
-    }, [])
+    }, [theme])
 
 
     return (

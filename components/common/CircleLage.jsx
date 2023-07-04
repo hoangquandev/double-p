@@ -30,8 +30,8 @@ const CircleLage = ({ theme, color }) => {
                 <div className='w-[7px] aspect-square rounded-full bg-black'></div>
                 <CircleLarge currentTheme={currentTheme} />
                 <CircleSmall currentTheme={currentTheme} />
-                {/* {currentTheme ? <div className='absolute top-[-2px] right-[2px] w-[10px] aspect-square rounded-full bg-white'></div> : null} */}
-                {/* {currentTheme && <div className='absolute bottom-[-1px] left-[2px] w-[7px] aspect-square rounded-full bg-white'></div>} */}
+                <div style={currentTheme ? { display: "block" } : { display: "none" }} className='absolute top-[-2px] right-[2px] w-[10px] aspect-square rounded-full bg-white'></div>
+                <div style={currentTheme ? { display: "block" } : { display: "none" }} className='absolute bottom-[-1px] left-[2px] w-[7px] aspect-square rounded-full bg-white'></div>
             </div>
 
         </div >
