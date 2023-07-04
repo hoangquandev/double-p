@@ -6,7 +6,7 @@ import Image from 'next/image'
 const FooterHome = () => {
     return (
         <div>
-            <div className='bg-[#ffffff4d] backdrop-blur-lg h-[550px] '>
+            <div className='bg-[#ffffff4d] backdrop-blur-lg h-[550px]'>
                 <div className='relative w-[1240px] min-[1920px]:w-[1720px] mx-auto grid grid-cols-4 gap-[20px] '>
                     <div className='relative w-[350px] h-[100px] z-10 mt-[226px] min-[1920px]:right-[-170px]'>
                         <Image

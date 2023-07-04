@@ -14,5 +14,5 @@ html {
 }
 
 .background {
-    @apply bg-[#ffffff4d] backdrop-blur-lg rounded-[20px];
+    @apply bg-[#8080804d] backdrop-blur-lg rounded-[20px];
 }

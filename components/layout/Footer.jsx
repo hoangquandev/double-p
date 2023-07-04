@@ -1,37 +1,64 @@
-'use client'
+import Image from "next/image"
+
 
 const Footer = () => {
     return (
-
-        <div
-            id='contact'
-            className='h-[300px] p-[30px] bg-black dark:bg-white rounded-t-[20px] text-white dark:text-black'>
-            <div className='text-center'>
-                <p className='text-xl font-bold font-primary'>Get In Touch!</p>
+        <div className="relative h-[380px]">
+            <div className="absolute top-[140px]  right-[-56px]">
+                <div className="flex justify-between">
+                    <div className="relative w-[315px] h-[88px] rotate-[10deg]">
+                        <Image
+                            src={'/say.png'}
+                            alt="say"
+                            style={{
+                                top: "10px",
+                                // left: "-56px"
+                            }}
+                            fill
+                            priority
+                        />
+                    </div>
+                    <div className="relative w-[290px] h-[146px] right-0">
+                        <Image
+                            src={'/hello-footer.png'}
+                            alt="hello"
+                            style={{
+                                top: "-40px",
+                                // right: "-50px"
+                                zIndex: 10
+                            }}
+                            fill
+                            priority
+                        />
+                    </div>
+                </div>
             </div>
-            <div className='mt-[60px] flex flex-col lg:flex-row justify-between font-secondary text-base font-light'>
-                <div className='mb-[30px] lg:mb-0'>
-                    <h2 className='text-sm mb-[17px]'>CODE BY HOANG QUAN</h2>
-                    <p>lehoangquanit@gmail.com</p>
-                    <p>+84394636161</p>
-                    <ul className='mt-[17px] flex flex-col lg:flex-row gap-0 lg:gap-[37px]'>
-                        <li>FaceBook</li>
-                        <li>Github</li>
-                        <li>Linkedin</li>
-                    </ul>
+            <div className="absolute bottom-0 background w-full p-[20px] grid grid-cols-3">
+                <div className="flex items-center justify-between">
+                    <h3 className="uppercase text-xl font-primary font-bold">drop me a <br /> message</h3>
+                    <div className="relative bg-[#8080804d] backdrop-blur-lg rounded-full w-[144px] h-[144px]">
+                        <Image
+                            src={'/footer.gif'}
+                            alt="footer"
+                            style={{
+                                filter: "grayscale(100%)",
+                                // top: "50%",
+                                // left: "50%",
+                                // transform: "translate(-50%,-50%)"
+                            }}
+                            fill
+                            priority
+                        />
+                    </div>
                 </div>
-                <div className='mb-[30px] lg:mb-0'>
-                    <h2 className='text-sm mb-[17px]'>CODE BY HOANG QUAN</h2>
-                    <p>lehoangquanit@gmail.com</p>
-                    <p>+84394636161</p>
-                    <ul className='mt-[17px] flex flex-col lg:flex-row gap-0 lg:gap-[37px]'>
-                        <li>FaceBook</li>
-                        <li>Github</li>
-                        <li>Linkedin</li>
-                    </ul>
-                </div>
-                <div className='mb-[30px] lg:mb-0'>
-                    <h2 className='text-sm mb-[17px]'>VARIAN.VISUAL@GMAIL.COM</h2>
+                <div className="relative col-start-2 col-end-4 flex font-third font-light">
+                    <h3 className="uppercase text-xl font-primary font-bold w-1/3 min-[1920px]:w-1/4 pl-[20px] my-auto">PHAM BUI <br /> CAO SON</h3>
+                    <p className="my-auto w-2/5 pl-[30px]">
+                        <a href="mailto:caosonwork@gmail.com">caosonwork@gmail.com</a>
+                        <br />
+                        <a href="tel:+84 972 091 245">+84 972 091 245</a>
+                    </p>
+                    <p className="absolute my-auto text-right right-0 top-[50%] translate-y-[-50%]">FACEBOOK <br /> BEHANCE</p>
                 </div>
             </div>
         </div>

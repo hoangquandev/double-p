@@ -1,47 +1,64 @@
 'use client'
+import { useEffect, useState } from 'react'
 import CircleLage from './CircleLage'
 import EyeWrapper from './EyeWrapper'
 import Polygon from './Polygon'
 
 const Eyes = ({ theme, color }) => {
+    const [display, setDisplay] = useState("none")
+    useEffect(() => {
+        if (theme === "light") {
+            setDisplay('block')
+        } else {
+            setDisplay('none')
+        }
+    }, [])
 
 
     return (
         <div className=' relative flex justify-center items-center mx-[18px]'>
             <EyeWrapper theme={theme} color={color} />
             <CircleLage theme={theme} color={color} />
-            {theme === "light" &&
-                <svg style={{
-                    position: "absolute",
-                    top: "28px",
-                    right: "18px"
-                }} width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M7 0C2.85185 2.07407 2.85185 2.07407 0 0C1.81481 3.65444 1.81481 3.65444 0 7C2.85185 5.72852 3.88889 5.72852 7 7C4.92593 3.11111 4.92593 3.11111 7 0Z" fill="white" />
-                </svg>
 
-            }
-            {theme === "light" &&
-                <svg style={{
-                    position: "absolute",
-                    top: "11px",
-                    right: "51px"
-                }} width="4" height="4" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M3.375 0C1.375 1 1.375 1 0 0C0.875 1.76196 0.875 1.76196 0 3.375C1.375 2.76196 1.875 2.76196 3.375 3.375C2.375 1.5 2.375 1.5 3.375 0Z" fill="white" />
-                </svg>
+            <svg style={{
+                position: "absolute",
+                display: display,
+                top: "28px",
+                right: "18px"
+            }} width="7" height="7" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7 0C2.85185 2.07407 2.85185 2.07407 0 0C1.81481 3.65444 1.81481 3.65444 0 7C2.85185 5.72852 3.88889 5.72852 7 7C4.92593 3.11111 4.92593 3.11111 7 0Z" fill="white" />
+            </svg>
 
 
-            }
-            {theme === "light" &&
-                <svg style={{
-                    position: "absolute",
-                    top: "16px",
-                    right: "52px"
-                }} width="1" height="1" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M3.375 0C1.375 1 1.375 1 0 0C0.875 1.76196 0.875 1.76196 0 3.375C1.375 2.76196 1.875 2.76196 3.375 3.375C2.375 1.5 2.375 1.5 3.375 0Z" fill="white" />
-                </svg>
+
+            <svg style={{
+                position: "absolute",
+                display: display,
+                top: "11px",
+                right: "51px"
+            }}
+                width="4" height="4" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg"
+
+            >
+                <path d="M3.375 0C1.375 1 1.375 1 0 0C0.875 1.76196 0.875 1.76196 0 3.375C1.375 2.76196 1.875 2.76196 3.375 3.375C2.375 1.5 2.375 1.5 3.375 0Z" fill="white">
+                </path>
+
+            </svg>
 
 
-            }
+
+
+            <svg style={{
+                position: "absolute",
+                display: display,
+                top: "16px",
+                right: "52px"
+            }} width="1" height="1" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3.375 0C1.375 1 1.375 1 0 0C0.875 1.76196 0.875 1.76196 0 3.375C1.375 2.76196 1.875 2.76196 3.375 3.375C2.375 1.5 2.375 1.5 3.375 0Z" fill="white" />
+            </svg>
+
+
+
 
 
             <Polygon theme={theme} top="-8px" />

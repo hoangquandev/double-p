@@ -29,7 +29,7 @@ const NavBar = () => {
                         </Link>
                     </li>
                     <li className="mt-2">
-                        <Link href={`${pathname}#contact`} scroll={false}>
+                        <Link href={`/contact`} scroll={false}>
                             <button>CONTACT</button>
                         </Link>
                     </li>

@@ -2,16 +2,19 @@
 import Work from '@/components/home/Work'
 import HomeBanner from '../components/home/HomeBanner'
 import Service from '@/components/home/Service'
+import FooterHome from '@/components/home/FooterHome'
+import Container from '@/components/layout/Container'
 
 export default function Home() {
 
   return (
     <main className="font-primary text-xl font-extrabold">
-      <HomeBanner />
-      <Service />
-      <Work />
+      <Container>
+        <HomeBanner />
+        <Service />
+        <Work />
 
-      {/* <TabHome />
+        {/* <TabHome />
       <Poster
         slug={"he-lo"}
         w={"1240px"}
@@ -40,6 +43,8 @@ export default function Home() {
         title={"The Modern Light Product"}
         desc={"is a creative studio specializing in custom animation, branded content, motion design, and short films. It was founded by Qieer Wang, a multimedia artist"}
       /> */}
+      </Container>
+      <FooterHome />
     </main>
   )
 }
