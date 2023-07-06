@@ -17,7 +17,7 @@ const Work = () => {
             </div>
             <div className='col-start-2 col-end-5 flex flex-col gap-[20px] '>
                 <div className='background relative min-[1920px]:h-[400px] lg:h-[288px]'>
-                    <div className='text-center text-white dark:text-black mt-[60px] mx-auto z-20'>
+                    <div className='text-center text-white  mt-[60px] mx-auto z-20'>
                         <h2 className='font-primary font-bold text-xl uppercase text-center mt-[60px]'>
                             THE MODERN TOUCH
                         </h2>
@@ -36,7 +36,7 @@ const Work = () => {
                     />
                 </div>
                 <div className='background relative min-[1920px]:h-[400px] lg:h-[288px]'>
-                    <div className='text-center text-white dark:text-black mt-[60px] mx-auto z-20'>
+                    <div className='text-center text-white  mt-[60px] mx-auto z-20'>
                         <h2 className='font-primary font-bold text-xl uppercase text-center mt-[60px]'>
                             LONG BEACH PEARL
                         </h2>
@@ -54,7 +54,7 @@ const Work = () => {
                     />
                 </div>
                 <div className='background relative min-[1920px]:h-[400px] lg:h-[288px]'>
-                    <div className='text-center text-white dark:text-black mt-[60px] mx-auto z-20'>
+                    <div className='text-center text-white  mt-[60px] mx-auto z-20'>
                         <h2 className='font-primary font-bold text-xl uppercase text-center mt-[60px]'>
                             yen sao thien viet
                         </h2>
