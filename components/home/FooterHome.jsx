@@ -5,41 +5,62 @@ import Image from 'next/image'
 
 const FooterHome = () => {
     return (
-        <div>
-            <div className='bg-[#ffffff4d] backdrop-blur-lg h-[550px]'>
-                <div className='relative w-[1240px] min-[1920px]:w-[1720px] mx-auto grid grid-cols-4 gap-[20px] '>
-                    <div className='relative w-[350px] h-[100px] z-10 mt-[226px] min-[1920px]:right-[-170px]'>
-                        <Image
-                            src={'/say.png'}
-                            fill
-                            alt='hello'
-                            priority
-                        />
-                    </div>
-                    {/* <div className='col-start-2 col-end-5 grid grid-cols-3 gap-[20px]'> */}
-                    <div className='bg-[#ffffff4d]  backdrop-blur-lg rounded-full w-[270px] aspect-square col-start-2 mt-[116px]'>
+        <div className='relative h-screen flex items-center justify-center flex-col font-third text-[12px] font-light leading-[24px] italic'>
+            <div className='absolute top-[60px] left-[74px]'>
+                <div className='bg-[#8080804d] backdrop-blur-lg rounded-full w-[289px] aspect-square overflow-hidden'>
+                    <Image
+                        src={'/avatar.png'}
+                        alt='cao son'
+                        fill
+                        priority
+                    />
+                </div>
 
-                    </div>
-                    <div className='col-start-3 col-end-5 relative mt-[120px] min-[1920px]:mt-[35px]'>
+            </div >
+            <div className='absolute bottom-[280px] left-[500px]'>
+                <div className=' w-[236px] h-[200px] aspect-square overflow-hidden'>
+                    <Image
+                        src={'/car.png'}
+                        alt='car'
+                        fill
+                        priority
+                    />
+                </div>
 
-                        <div className='relative w-full h-full  min-[1920px]:w-[938px] min-[1920px]:h-[471px] min-[1920px]:left-[-120px]'>
-                            <Image
-                                src={'/hello.png'}
-                                fill
-                                alt='hello'
-                                priority
-                            />
-                        </div>
+            </div >
+            <div div className='relative w-[1085px] h-[548px]' >
+                <Image
+                    src={'/sayhello.png'}
+                    alt='say hello'
+                    fill
+
+                    priority
+                />
+            </div >
+            <div className='absolute top-[384px]'>
+                <div className='flex justify-between items-center lg:w-[1240px] min-[1920px]:w-[1720px] mx-auto'>
+                    <div>
+                        <a href="mailto:caosonwork@gmail.com">caosonwork@gmail.com</a>
                     </div>
-                    {/* </div> */}
+                    <div>
+                        Located in Viet Nam
+                    </div>
+                </div>
+                <TextHome />
+                <div className='flex justify-between items-center lg:w-[1240px] min-[1920px]:w-[1720px] mx-auto'>
+                    <div>
+                        © Design by CAO SON
+                    </div>
+                    <div>
+                        2023 © Edition
+                    </div>
+                    <div>
+                        © Code by Hoang Quan
+                    </div>
                 </div>
             </div>
-            <div>
-                <div></div>
-                <TextHome />
-                <div></div>
-            </div>
-        </div>
+
+        </div >
     )
 }
 
