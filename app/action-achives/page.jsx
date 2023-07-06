@@ -112,6 +112,7 @@ const projectAchives = [
         role: "Photography",
         time: "2019"
     },
+
 ]
 
 const Achives = () => {

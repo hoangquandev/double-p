@@ -9,8 +9,25 @@ const NavBar = () => {
     const pathname = usePathname()
     // console.log(pathname);
     return (
-        <nav className="font-primary font-normal text-sm flex justify-between px-7 py-10">
-            <div className="text-xl font-extrabold text-left text-[#F00]">
+        <nav className="fixed top-0 left-[50%] translate-x-[-50%] w-[1240px] backdrop-blur-lg bg-[rgba(255,255,255,0)] z-50 font-primary font-normal text-sm flex justify-between px-7 py-10 uppercase">
+            <div>
+                <ThemeSwitch />
+            </div>
+            <div>
+                <ul className="text-right">
+                    <li >
+                        <Link href="/work" >
+                            WORK
+                        </Link>
+                    </li>
+                    <li className="mt-2">
+                        <Link href={`/contact`}>
+                            CONTACT
+                        </Link>
+                    </li>
+                </ul>
+            </div>
+            {/* <div className="text-xl font-extrabold text-left text-[#F00]">
                 <button>
                     <h2>
                         CAO <br />
@@ -34,7 +51,7 @@ const NavBar = () => {
                         </Link>
                     </li>
                 </ul>
-            </div>
+            </div> */}
         </nav>
     )
 }
