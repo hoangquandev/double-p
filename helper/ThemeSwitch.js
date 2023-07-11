@@ -8,12 +8,23 @@ const ThemeSwitch = () => {
     const locale = 'en';
     const [today, setDate] = useState(new Date())
     const [color, setColor] = useState("#D94539")
+    const [scrollY, setScrollY] = useState(false)
     const { systemTheme, theme, setTheme } = useTheme();
     const currentTheme = theme === 'system' ? systemTheme : theme;
     const hour = today.getHours();
     const minute = today.getMinutes();
     // const hour = 14
     // let time = new Date();
+    useEffect(() => {
+        function scrollFunction() {
+            if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+                setScrollY(true)
+            } else {
+                setScrollY(false)
+            }
+        }
+        window.onscroll = function () { scrollFunction() };
+    }, [])
     useEffect(() => {
         if (hour > 5 && hour < 17) {
             setTheme('light')
@@ -47,56 +58,97 @@ const ThemeSwitch = () => {
     const time = today.toLocaleTimeString(locale, { hour: 'numeric', hour12: true, minute: 'numeric' });
     return (
         <div
-            onClick={theme == "dark" ? handleLight : handleDark}
+
             className='flex items-center gap-[20px]'
         >
-            <div>
-                <svg width={63} height={62} viewBox="0 0 63 62" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g clipPath="url(#clip0_799_21423)">
-                        <path d="M18.4375 22.2812C18.4375 14.7909 24.5096 8.71875 32 8.71875C39.4904 8.71875 45.5625 14.7909 45.5625 22.2812V31V39.7188C45.5625 47.2091 39.4904 53.2812 32 53.2812C24.5096 53.2812 18.4375 47.2091 18.4375 39.7188V22.2812Z" fill="black" />
-                        <path d="M31.9678 59.3204C38.7182 59.3204 44.1905 53.8481 44.1905 47.0977C44.1905 40.3473 38.7182 34.875 31.9678 34.875C25.2174 34.875 19.7451 40.3473 19.7451 47.0977C19.7451 53.8481 25.2174 59.3204 31.9678 59.3204Z" fill="white" />
-                        <path d="M1.31641 13.8057V48.1938C1.31641 55.6668 7.33275 61.6831 14.8057 61.6831H49.1938C56.6668 61.6831 62.6831 55.6668 62.6831 48.1938V13.8057C62.6831 6.33275 56.6668 0.316406 49.1938 0.316406H14.8057C7.33275 0.316406 1.31641 6.33275 1.31641 13.8057ZM31.9681 53.1969C24.4952 53.1969 18.4788 47.1806 18.4788 39.7076V22.2919C18.4788 18.8721 19.7454 15.8322 21.772 13.4257C24.2418 10.5759 27.8516 8.80262 31.9048 8.80262C35.9579 8.80262 39.5677 10.5759 42.0376 13.4257C44.1274 15.7689 45.394 18.8721 45.394 22.2919V39.7076C45.394 47.1806 39.3777 53.1969 31.9048 53.1969H31.9681Z" fill="black" stroke="#DFDFDF" strokeMiterlimit={10} />
-                        <g clipPath="url(#clip1_799_21423)">
-                            <path d="M25.2188 25.1875C25.2188 26.2531 24.3469 27.125 23.2812 27.125C24.3469 27.125 25.2188 27.9969 25.2188 29.0625C25.2188 27.9969 26.0906 27.125 27.1562 27.125C26.0906 27.125 25.2188 26.2531 25.2188 25.1875Z" fill="white" />
+            <div onClick={theme == "dark" ? handleLight : handleDark}>
+                {theme === "dark" ?
+                    <svg width={63} height={62} viewBox="0 0 63 62" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clipPath="url(#clip0_799_21423)">
+                            <path d="M18.4375 22.2812C18.4375 14.7909 24.5096 8.71875 32 8.71875C39.4904 8.71875 45.5625 14.7909 45.5625 22.2812V31V39.7188C45.5625 47.2091 39.4904 53.2812 32 53.2812C24.5096 53.2812 18.4375 47.2091 18.4375 39.7188V22.2812Z" fill="black" />
+                            <path d="M31.9678 59.3204C38.7182 59.3204 44.1905 53.8481 44.1905 47.0977C44.1905 40.3473 38.7182 34.875 31.9678 34.875C25.2174 34.875 19.7451 40.3473 19.7451 47.0977C19.7451 53.8481 25.2174 59.3204 31.9678 59.3204Z" fill="white" />
+                            <path d="M1.31641 13.8057V48.1938C1.31641 55.6668 7.33275 61.6831 14.8057 61.6831H49.1938C56.6668 61.6831 62.6831 55.6668 62.6831 48.1938V13.8057C62.6831 6.33275 56.6668 0.316406 49.1938 0.316406H14.8057C7.33275 0.316406 1.31641 6.33275 1.31641 13.8057ZM31.9681 53.1969C24.4952 53.1969 18.4788 47.1806 18.4788 39.7076V22.2919C18.4788 18.8721 19.7454 15.8322 21.772 13.4257C24.2418 10.5759 27.8516 8.80262 31.9048 8.80262C35.9579 8.80262 39.5677 10.5759 42.0376 13.4257C44.1274 15.7689 45.394 18.8721 45.394 22.2919V39.7076C45.394 47.1806 39.3777 53.1969 31.9048 53.1969H31.9681Z" fill="black" stroke="#DFDFDF" strokeMiterlimit={10} />
+                            <g clipPath="url(#clip1_799_21423)">
+                                <path d="M25.2188 25.1875C25.2188 26.2531 24.3469 27.125 23.2812 27.125C24.3469 27.125 25.2188 27.9969 25.2188 29.0625C25.2188 27.9969 26.0906 27.125 27.1562 27.125C26.0906 27.125 25.2188 26.2531 25.2188 25.1875Z" fill="white" />
+                            </g>
+                            <g clipPath="url(#clip2_799_21423)">
+                                <path d="M39.75 15.5C39.75 16.5656 38.8781 17.4375 37.8125 17.4375C38.8781 17.4375 39.75 18.3094 39.75 19.375C39.75 18.3094 40.6219 17.4375 41.6875 17.4375C40.6219 17.4375 39.75 16.5656 39.75 15.5Z" fill="white" />
+                            </g>
+                            <g clipPath="url(#clip3_799_21423)">
+                                <path d="M40.7188 30.0312C40.7188 31.0969 39.8469 31.9688 38.7812 31.9688C39.8469 31.9688 40.7188 32.8406 40.7188 33.9062C40.7188 32.8406 41.5906 31.9688 42.6562 31.9688C41.5906 31.9688 40.7188 31.0969 40.7188 30.0312Z" fill="white" />
+                            </g>
+                            <path d="M26.1875 22.2832C29.3695 19.1012 34.5944 19.0619 37.8157 22.2832C34.6337 25.4652 29.4088 25.5045 26.1875 22.2832Z" fill="white" />
+                            <circle cx={32} cy="22.2812" r="1.9375" fill="black" />
                         </g>
-                        <g clipPath="url(#clip2_799_21423)">
-                            <path d="M39.75 15.5C39.75 16.5656 38.8781 17.4375 37.8125 17.4375C38.8781 17.4375 39.75 18.3094 39.75 19.375C39.75 18.3094 40.6219 17.4375 41.6875 17.4375C40.6219 17.4375 39.75 16.5656 39.75 15.5Z" fill="white" />
+                        <path d="M31.6533 61.6192V53.1963" stroke="white" strokeMiterlimit={10} />
+                        <path d="M31.6533 8.80359V0.317383" stroke="white" strokeMiterlimit={10} />
+                        <path d="M49.386 61.6205L41.9131 48.7012" stroke="white" strokeMiterlimit={10} />
+                        <path d="M21.5206 13.4267L13.9844 0.317383" stroke="white" strokeMiterlimit={10} />
+                        <path d="M62.304 48.7006L45.1416 38.7578" stroke="white" strokeMiterlimit={10} />
+                        <path d="M18.2257 23.1793L1 13.2998" stroke="white" strokeMiterlimit={10} />
+                        <path d="M62.304 30.9688H45.1416" stroke="white" strokeMiterlimit={10} />
+                        <path d="M18.2257 30.9688H1" stroke="white" strokeMiterlimit={10} />
+                        <path d="M62.304 13.2998L45.1416 23.1793" stroke="white" strokeMiterlimit={10} />
+                        <path d="M18.2257 38.7578L1 48.7006" stroke="white" strokeMiterlimit={10} />
+                        <path d="M49.3849 0.317383L41.8486 13.4267" stroke="white" strokeMiterlimit={10} />
+                        <path d="M21.5206 48.5752L13.9844 61.6212" stroke="white" strokeMiterlimit={10} />
+                        <defs>
+                            <clipPath id="clip0_799_21423">
+                                <rect width={62} height={62} fill="white" transform="translate(1)" />
+                            </clipPath>
+                            <clipPath id="clip1_799_21423">
+                                <rect width="3.875" height="3.875" fill="white" transform="translate(23.2812 25.1875)" />
+                            </clipPath>
+                            <clipPath id="clip2_799_21423">
+                                <rect width="3.875" height="3.875" fill="white" transform="translate(37.8125 15.5)" />
+                            </clipPath>
+                            <clipPath id="clip3_799_21423">
+                                <rect width="3.875" height="3.875" fill="white" transform="translate(38.7812 30.0312)" />
+                            </clipPath>
+                        </defs>
+                    </svg>
+                    :
+                    <svg width="63" height="62" viewBox="0 0 63 62" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_742_5572)">
+                            <path d="M31.9668 28.4454C38.7172 28.4454 44.1895 22.9731 44.1895 16.2227C44.1895 9.47228 38.7172 4 31.9668 4C25.2164 4 19.7441 9.47228 19.7441 16.2227C19.7441 22.9731 25.2164 28.4454 31.9668 28.4454Z" fill="white" />
+                            <path d="M1.31641 13.8057V48.1938C1.31641 55.6668 7.33275 61.6831 14.8057 61.6831H49.1938C56.6668 61.6831 62.6831 55.6668 62.6831 48.1938V13.8057C62.6831 6.33275 56.6668 0.316406 49.1938 0.316406H14.8057C7.33275 0.316406 1.31641 6.33275 1.31641 13.8057ZM31.9681 53.1969C24.4952 53.1969 18.4788 47.1806 18.4788 39.7076V22.2919C18.4788 18.8721 19.7454 15.8322 21.772 13.4257C24.2418 10.5759 27.8516 8.80262 31.9048 8.80262C35.9579 8.80262 39.5677 10.5759 42.0376 13.4257C44.1274 15.7689 45.394 18.8721 45.394 22.2919V39.7076C45.394 47.1806 39.3777 53.1969 31.9048 53.1969H31.9681Z" fill="url(#paint0_linear_742_5572)" stroke="black" stroke-miterlimit="10" />
+                            <path d="M25.2188 29C25.2188 30.0656 24.3469 30.9375 23.2812 30.9375C24.3469 30.9375 25.2188 31.8094 25.2188 32.875C25.2188 31.8094 26.0906 30.9375 27.1562 30.9375C26.0906 30.9375 25.2188 30.0656 25.2188 29Z" fill="white" />
+                            <path d="M39.75 34C39.75 35.0656 38.8781 35.9375 37.8125 35.9375C38.8781 35.9375 39.75 36.8094 39.75 37.875C39.75 36.8094 40.6219 35.9375 41.6875 35.9375C40.6219 35.9375 39.75 35.0656 39.75 34Z" fill="white" />
+                            <g clip-path="url(#clip1_742_5572)">
+                                <path d="M40.7188 30.0312C40.7188 31.0969 39.8469 31.9688 38.7812 31.9688C39.8469 31.9688 40.7188 32.8406 40.7188 33.9062C40.7188 32.8406 41.5906 31.9688 42.6562 31.9688C41.5906 31.9688 40.7188 31.0969 40.7188 30.0312Z" fill="white" />
+                            </g>
+                            <path d="M23.002 40C27.9272 35.0748 36.0143 35.014 41.0004 40C36.0751 44.9252 27.988 44.986 23.002 40Z" fill="white" />
+                            <circle cx="32" cy="40" r="3" fill="black" />
                         </g>
-                        <g clipPath="url(#clip3_799_21423)">
-                            <path d="M40.7188 30.0312C40.7188 31.0969 39.8469 31.9688 38.7812 31.9688C39.8469 31.9688 40.7188 32.8406 40.7188 33.9062C40.7188 32.8406 41.5906 31.9688 42.6562 31.9688C41.5906 31.9688 40.7188 31.0969 40.7188 30.0312Z" fill="white" />
-                        </g>
-                        <path d="M26.1875 22.2832C29.3695 19.1012 34.5944 19.0619 37.8157 22.2832C34.6337 25.4652 29.4088 25.5045 26.1875 22.2832Z" fill="white" />
-                        <circle cx={32} cy="22.2812" r="1.9375" fill="black" />
-                    </g>
-                    <path d="M31.6533 61.6192V53.1963" stroke="white" strokeMiterlimit={10} />
-                    <path d="M31.6533 8.80359V0.317383" stroke="white" strokeMiterlimit={10} />
-                    <path d="M49.386 61.6205L41.9131 48.7012" stroke="white" strokeMiterlimit={10} />
-                    <path d="M21.5206 13.4267L13.9844 0.317383" stroke="white" strokeMiterlimit={10} />
-                    <path d="M62.304 48.7006L45.1416 38.7578" stroke="white" strokeMiterlimit={10} />
-                    <path d="M18.2257 23.1793L1 13.2998" stroke="white" strokeMiterlimit={10} />
-                    <path d="M62.304 30.9688H45.1416" stroke="white" strokeMiterlimit={10} />
-                    <path d="M18.2257 30.9688H1" stroke="white" strokeMiterlimit={10} />
-                    <path d="M62.304 13.2998L45.1416 23.1793" stroke="white" strokeMiterlimit={10} />
-                    <path d="M18.2257 38.7578L1 48.7006" stroke="white" strokeMiterlimit={10} />
-                    <path d="M49.3849 0.317383L41.8486 13.4267" stroke="white" strokeMiterlimit={10} />
-                    <path d="M21.5206 48.5752L13.9844 61.6212" stroke="white" strokeMiterlimit={10} />
-                    <defs>
-                        <clipPath id="clip0_799_21423">
-                            <rect width={62} height={62} fill="white" transform="translate(1)" />
-                        </clipPath>
-                        <clipPath id="clip1_799_21423">
-                            <rect width="3.875" height="3.875" fill="white" transform="translate(23.2812 25.1875)" />
-                        </clipPath>
-                        <clipPath id="clip2_799_21423">
-                            <rect width="3.875" height="3.875" fill="white" transform="translate(37.8125 15.5)" />
-                        </clipPath>
-                        <clipPath id="clip3_799_21423">
-                            <rect width="3.875" height="3.875" fill="white" transform="translate(38.7812 30.0312)" />
-                        </clipPath>
-                    </defs>
-                </svg>
+                        <path d="M31.6543 61.6182V53.1953" stroke="black" stroke-miterlimit="10" />
+                        <path d="M31.6543 8.80262V0.316406" stroke="black" stroke-miterlimit="10" />
+                        <path d="M49.385 61.6185L41.9121 48.6992" stroke="black" stroke-miterlimit="10" />
+                        <path d="M21.5206 13.4257L13.9844 0.316406" stroke="black" stroke-miterlimit="10" />
+                        <path d="M62.305 48.7006L45.1426 38.7578" stroke="black" stroke-miterlimit="10" />
+                        <path d="M18.2257 23.1783L1 13.2988" stroke="black" stroke-miterlimit="10" />
+                        <path d="M62.305 30.9688H45.1426" stroke="black" stroke-miterlimit="10" />
+                        <path d="M18.2257 30.9688H1" stroke="black" stroke-miterlimit="10" />
+                        <path d="M62.305 13.2988L45.1426 23.1783" stroke="black" stroke-miterlimit="10" />
+                        <path d="M18.2257 38.7578L1 48.7006" stroke="black" stroke-miterlimit="10" />
+                        <path d="M49.3859 0.316406L41.8496 13.4257" stroke="black" stroke-miterlimit="10" />
+                        <path d="M21.5206 48.5742L13.9844 61.6202" stroke="black" stroke-miterlimit="10" />
+                        <defs>
+                            <linearGradient id="paint0_linear_742_5572" x1="31.9998" y1="0.316406" x2="31.9998" y2="61.6831" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#D0D0D0" />
+                                <stop offset="1" stop-color="#D0D0D0" stop-opacity="0" />
+                            </linearGradient>
+                            <clipPath id="clip0_742_5572">
+                                <rect width="62" height="62" fill="white" transform="translate(1)" />
+                            </clipPath>
+                            <clipPath id="clip1_742_5572">
+                                <rect width="3.875" height="3.875" fill="white" transform="translate(38.7812 30.0312)" />
+                            </clipPath>
+                        </defs>
+                    </svg>
+
+                }
             </div>
-            <div>
+            <div className={scrollY ? `block` : `hidden`}>
                 <ul>
                     <li>{hour}:{minute < 10 ? "0" + minute : minute}</li>
                     <li className='mt-2'>{wish}</li>

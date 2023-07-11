@@ -16,3 +16,15 @@ html {
 .background {
     @apply bg-[#8080804d] backdrop-blur-lg rounded-[20px];
 }
+
+.text-mini {
+    @apply text-[12px] font-third font-light italic;
+}
+
+.text-body {
+    @apply text-[18px] font-third font-light leading-[25px];
+}
+
+.text-title {
+    @apply text-[25px] font-primary font-extrabold leading-[35px] uppercase;
+}

@@ -3,7 +3,7 @@ import React from 'react'
 
 const Work = () => {
     return (
-        <div className='grid grid-cols-4 gap-[20px] my-[150px]'>
+        <div className='grid grid-cols-3 gap-[20px] my-[150px]'>
             <div className='pl-[30px]'>
                 <h2 className='font-primary text-[25px] leading-[35px] font-extrabold uppercase'>stay
                     create</h2>
@@ -15,7 +15,7 @@ const Work = () => {
                     See More Work
                 </div>
             </div>
-            <div className='col-start-2 col-end-5 flex flex-col gap-[20px] '>
+            <div className='col-start-2 col-end-4 flex flex-col gap-[20px] '>
                 <div className='background relative min-[1920px]:h-[400px] lg:h-[288px]'>
                     <div className='text-center text-white  mt-[60px] mx-auto z-20'>
                         <h2 className='font-primary font-bold text-xl uppercase text-center mt-[60px]'>

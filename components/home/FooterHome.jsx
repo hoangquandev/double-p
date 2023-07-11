@@ -5,9 +5,9 @@ import Image from 'next/image'
 
 const FooterHome = () => {
     return (
-        <div className='relative h-screen flex items-center justify-center flex-col font-third text-[12px] font-light leading-[24px] italic'>
-            <div className='absolute top-[60px] left-[74px]'>
-                <div className='bg-[#8080804d] backdrop-blur-lg rounded-full w-[289px] aspect-square overflow-hidden'>
+        <div className='relative h-screen flex items-center justify-center flex-col font-third text-[12px] font-light leading-[24px] italic pt-[165px]'>
+            <div className='absolute min-[1920px]:top-[165px] top-[205px] left-[160px] min-[1920px]:left-[110px]'>
+                <div className='bg-[#8080804d] backdrop-blur-lg rounded-full w-[200px] min-[1920px]:w-[289px] aspect-square overflow-hidden'>
                     <Image
                         src={'/avatar.png'}
                         alt='cao son'
@@ -37,7 +37,7 @@ const FooterHome = () => {
                     priority
                 />
             </div >
-            <div className='absolute top-[384px]'>
+            <div className='absolute top-[400px] '>
                 <div className='flex justify-between items-center lg:w-[1240px] min-[1920px]:w-[1720px] mx-auto'>
                     <div>
                         <a href="mailto:caosonwork@gmail.com">caosonwork@gmail.com</a>
