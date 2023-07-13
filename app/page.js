@@ -12,7 +12,7 @@ export default function Home() {
     <main className="font-primary text-xl font-extrabold">
       <Container>
         <HeroSection />
-        <Service />
+        {/* <Service /> */}
         <Work />
 
         {/* <TabHome />

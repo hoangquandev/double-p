@@ -1,8 +1,10 @@
+'use client'
 import React from 'react'
 import IconGrid from './IconGrid'
 import DetailSection from './DetailSection'
 import Link from 'next/link'
 import { convertToSlug } from '@/utils/convert'
+import { useTheme } from 'next-themes'
 
 const project = [
     {
@@ -63,6 +65,7 @@ const project = [
 ]
 
 const WorkGrid = () => {
+    const { theme } = useTheme()
     return (
         <div className='px-[20px]'>
             <div className='flex justify-between items-center'>
@@ -82,9 +85,9 @@ const WorkGrid = () => {
                     </div>
                     <div className='relative'>
                         <Link href="/action-achives"><h3 className='font-secondary font-bold text-[18px] leading-[21px] uppercase'>action achives</h3></Link>
-                        <div className='absolute top-[-15px] left-[180px]'>
+                        <div className='absolute top-[-15px] left-[200px]'>
                             <svg width={19} height={19} viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M18.1985 1.07354L1.07285 18.1992M1.07285 18.1992L17.5535 17.8656M1.07285 18.1992L1.40647 1.71853" stroke="black" />
+                                <path d="M18.1985 1.07354L1.07285 18.1992M1.07285 18.1992L17.5535 17.8656M1.07285 18.1992L1.40647 1.71853" stroke={theme === "dark" ? "white" : "black"} />
                             </svg>
                         </div>
 

@@ -121,9 +121,9 @@ const Achives = () => {
     return (
         <div>
             <div>
-                <h2 className='uppercase font-primary text-[25px] font-extrabold leading-[35px] text-center mb-[59px] mt-[80px]'>Action achives</h2>
+                <h2 className='uppercase font-primary text-[25px] font-extrabold leading-[35px] text-center mb-[70px] mt-[80px]'>Action achives</h2>
             </div>
-            <div className='w-full'>
+            <div className='w-3/5 mx-auto'>
                 <div className='relative flex w-full text-left [&>*]:pb-[60px] text-lg font-secondary font-bold'>
                     <div className='w-1/3 min-[1920px]:w-1/4 pl-[20px]'>PROJECT</div>
                     <div className='w-1/4 min-[1920px]:w-1/4 pl-[30px]'>ROLE</div>

@@ -12,6 +12,7 @@ const NavBar = () => {
     const [isHover, setHover] = useState(false)
     const [isShow, setShow] = useState(false)
     const container = useRef();
+    const menuRef = useRef();
     const imageRef = useRef()
     const hello = useRef()
     const nav = useRef()
@@ -31,6 +32,9 @@ const NavBar = () => {
                 .to(container.current, {
                     height: "100vh", backgroundColor: "rgba(128,128,128,0.3)",
                     backdropFilter: "blur(24px)"
+                })
+                .to(menuRef.current, {
+                    display: "block"
                 })
                 .from(hello.current, {
                     opacity: 0,
@@ -62,7 +66,7 @@ const NavBar = () => {
                 })
                 .reverse();
         }, container);
-        // return () => ctx.revert();
+        return () => ctx.revert();
     }, []);
     const handleOpenMenu = () => {
         setShow(true)
@@ -104,7 +108,7 @@ const NavBar = () => {
                     onMouseOver={handleMouseOver}
                     onMouseOut={handleMouseOut}
                     onClick={isShow ? handleCloseMenu : handleOpenMenu}
-                    className="flex items-center justify-center ">
+                    className="flex items-center justify-center cursor-pointer ">
 
 
                     {isShow ?
@@ -202,14 +206,14 @@ const NavBar = () => {
 
                 </div> */}
             </div>
-            <div className="relative pt-[70px] pb-[95px]">
-                <ul className="w-[1240px] mx-auto text-[70px] font-primary font-extrabold uppercase text-right flex flex-col justify-between items-end gap-[70px] min-[1920px]:gap-[134px]">
+            <div ref={menuRef} className="hidden relative pt-[70px] pb-[95px]">
+                <ul className="w-[1240px] min-[1920px]:w-[1720px] mx-auto text-[70px] font-primary font-extrabold uppercase text-right flex flex-col justify-between items-end gap-[70px] min-[1920px]:gap-[70px]">
                     <li ref={hello} className="flex flex-col justify-between h-[142px] leading-[47px]">
                         <div>xin</div>
                         <div>chào</div>
                     </li>
                     <li ref={nav}>
-                        <ul className="flex flex-col gap-[20px] min-[1920px]:gap-[50px] justify-between text-title">
+                        <ul className="flex flex-col gap-[20px] min-[1920px]:gap-[30px] justify-between text-title">
                             <li onClick={handleCloseMenu}>
                                 <Link href={'/'}>home</Link>
                             </li>
@@ -240,7 +244,7 @@ const NavBar = () => {
                         </ul>
                     </li>
                 </ul>
-                <div ref={imageRef} className="absolute top-[50%] left-0 translate-y-[-50%] w-3/5">
+                <div ref={imageRef} className="absolute top-[44%] min-[1920px]:top-[40%] left-0 translate-y-[-50%] w-3/5">
                     <div className="relative aspect-[1985/569] rounded-[20px] overflow-hidden">
                         <Image
                             src={'/menu-home.png'}

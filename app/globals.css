@@ -28,3 +28,7 @@ html {
 .text-title {
     @apply text-[25px] font-primary font-extrabold leading-[35px] uppercase;
 }
+
+.cd {
+    -webkit-mask-image: radial-gradient(circle 65px at right, transparent 0, transparent 32px, black 21px);
+}

@@ -1,3 +1,4 @@
+import FooterHome from '@/components/home/FooterHome'
 import Container from '@/components/layout/Container'
 import Footer from '@/components/layout/Footer'
 import React from 'react'
@@ -7,7 +8,7 @@ const layoutAchives = ({ children }) => {
         <div>
             <Container>
                 {children}
-                <Footer />
+                <FooterHome />
             </Container>
         </div>
     )

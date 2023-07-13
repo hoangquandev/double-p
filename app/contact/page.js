@@ -3,7 +3,7 @@ import React from 'react'
 
 const Contact = () => {
   return (
-    <div className='mt-[39px]'>
+    <div className='mt-[165px]'>
       <div className='relative'>
         <div className='absolute w-[446px] h-[124px] rotate-[20deg]'>
           <Image
