@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Info = ({ name, desc, role, client, time }) => {
+const Info = ({ name, desc, role, time }) => {
     return (
         <div className='flex gap-[20px] [&>*]:w-1/3 font-third text-base italic font-light'>
             <div>
