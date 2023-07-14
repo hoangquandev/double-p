@@ -26,59 +26,12 @@ const bioRhyme_Expanded = BioRhyme_Expanded({
 })
 
 export const metadata = {
-  title: "CC.STUDIO - Varian Visual",
+  title: "Cao Son",
   description:
-    "Frontend Engineer and Product Designer.",
+    "Portfolio Product Designer.",
   generator: "Next.js",
-  applicationName: "varian visual",
-  keywords: [
-    "freelance",
-    "developer",
-    "freelance developer",
-    "frontend",
-    "react",
-    "frontend developer",
-    "frontend engineer",
-    "creative",
-    "creative developer",
-    "creative engineer",
-    "tech",
-    "nigeria",
-    "software",
-    "software developer",
-    "portfolio",
-    "frontend developer portfolio",
-    "creative developer portfolio",
-  ],
-  // colorScheme: "light",
-  openGraph: {
-    title: "CC.STUDIO - Varian Visual",
-    description:
-      "Frontend Engineer and Product Designer.",
-    // url: "https://www.victorwilliams.me/",
-    // siteName: "www.victorwilliams.me",
-    images: [
-      {
-        url: "https://user-images.githubusercontent.com/84178696/228620835-e3cc5c9b-72fc-4f54-a628-407ef7b650f5.png",
-        width: 1200,
-        height: 630,
-        alt: "CC.STUDIO - Varian Visual",
-      },
-    ],
-    locale: "vi-VN",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "CC.STUDIO - Varian Visual",
-    description:
-      "Frontend Engineer and Product Designer",
-    creator: "CaoSon, HoangQuan",
-    // creatorId: "1243720976552144897",
-    images: [
-      "https://user-images.githubusercontent.com/84178696/228620835-e3cc5c9b-72fc-4f54-a628-407ef7b650f5.png",
-    ],
-  },
+  applicationName: "Cao Son",
+
   // robots: {
   //   index: true,
   //   follow: true,
